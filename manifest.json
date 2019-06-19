@@ -1,33 +1,16 @@
 {
-  "name": "Bookmarks",
-  "version": "1.0",
-  "description": "Cool bookmarks stuff",
   "manifest_version": 2,
-  "permissions": [
-          "bookmarks"
-        ],
-  "commands": {
-    "toggle-feature-foo": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+Y",
-        "mac": "Command+Shift+Y"
-      },
-      "description": "Toggle feature foo"
-    },
-    "_execute_browser_action": {
-      "suggested_key": {
-        "windows": "Ctrl+Shift+Y",
-        "mac": "Command+Shift+Y",
-        "chromeos": "Ctrl+Shift+U",
-        "linux": "Ctrl+Shift+J"
-      }
-    },
-    "_execute_page_action": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+E",
-        "windows": "Alt+Shift+P",
-        "mac": "Alt+Shift+P"
-      }
+  "name": "My Cool Extension",
+  "version": "0.1",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
     }
-  }
+  ]
 }
